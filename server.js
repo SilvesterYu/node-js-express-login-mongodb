@@ -29,6 +29,11 @@ app.use(
 const db = require("./app/models");
 const Role = db.role;
 
+// --
+app.use(express.static("public"));
+// --
+
+
 db.mongoose
   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
